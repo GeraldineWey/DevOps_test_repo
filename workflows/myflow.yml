@@ -1,0 +1,12 @@
+name: Deploy Workflow
+on: push
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install pylint
+        run: pip install pylint
+      - name: Do Tests
+        run: pylint .
